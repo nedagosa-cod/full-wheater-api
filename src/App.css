@@ -1,0 +1,260 @@
+.container {
+  display: flex;
+  gap: 12px;
+  padding: 20px 40px;
+  width: 100vw;
+  height: 100vh;
+  background-color: #151b35;
+}
+.big {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 70%;
+}
+.mid {
+  width: 30%;
+}
+.box-search {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+  & input {
+    width: 100%;
+    height: 40px;
+    font-size: 2rem;
+    outline: none;
+    padding-left: 12px;
+    background: #605d70;
+    border: 1px solid #34314d;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+  }
+}
+.box-weather {
+  display: flex;
+  align-items: center;
+  height: 30%;
+  .data {
+    width: 70%;
+    padding: 0 30px;
+    & h2 {
+      font-size: 3.4rem;
+    }
+    & h3 {
+      font-size: 1.4rem;
+    }
+    & span {
+      font-size: 8rem;
+    }
+    .location {
+      display: flex;
+      & figure {
+        width: 64px;
+      }
+    }
+  }
+  .img {
+    width: 30%;
+    .figure {
+      margin: auto;
+      width: 70%;
+    }
+  }
+}
+.box-today {
+  height: 30%;
+  padding: 20px;
+  background: #605d70;
+  border-radius: 1.8rem;
+  -webkit-border-radius: 1.8rem;
+  -moz-border-radius: 1.8rem;
+  -ms-border-radius: 1.8rem;
+  -o-border-radius: 1.8rem;
+}
+.box-wind {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 30%;
+  padding: 20px;
+  background: #605d70;
+  border-radius: 1.8rem;
+  color: white;
+  -webkit-border-radius: 1.8rem;
+  -moz-border-radius: 1.8rem;
+  -ms-border-radius: 1.8rem;
+  -o-border-radius: 1.8rem;
+  & .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    & .condition {
+      width: 260px;
+      text-align: center;
+      & h2 {
+        font-size: 2rem;
+      }
+      & span {
+        font-size: 2.2rem;
+      }
+    }
+  }
+  & span {
+    width: 100%;
+  }
+  & h2 {
+    color: goldenrod;
+  }
+}
+.box-brujula {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  gap: 8px;
+  & .data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    & span {
+      font-size: 4.4rem;
+      width: auto;
+    }
+  }
+  & h2 {
+    font-size: 1.8rem;
+    width: 100%;
+  }
+}
+
+.pl {
+    display: block;
+    width: 5em;
+    height: 5em;
+  
+  & .pl__arrows,
+  .pl__ring-rotate,
+  .pl__ring-stroke,
+  .pl__tick {
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  
+  & .pl__arrows {
+    animation-name: arrows42;
+    transform: rotate(45deg);
+    transform-origin: 16px 52px;
+  }
+  
+  & .pl__ring-rotate,
+  .pl__ring-stroke {
+    transform-origin: 80px 80px;
+  }
+  
+  & .pl__ring-rotate {
+    animation-name: ringRotate42;
+  }
+  
+  & .pl__ring-stroke {
+    animation-name: ringStroke42;
+    transform: rotate(-45deg);
+  }
+  
+  & .pl__tick {
+    animation-name: tick42;
+  }
+  
+  &.pl__tick:nth-child(2) {
+    animation-delay: -1.75s;
+  }
+  
+  &.pl__tick:nth-child(3) {
+    animation-delay: -1.5s;
+  }
+  
+  &.pl__tick:nth-child(4) {
+    animation-delay: -1.25s;
+  }
+  
+  &.pl__tick:nth-child(5) {
+    animation-delay: -1s;
+  }
+  
+  &.pl__tick:nth-child(6) {
+    animation-delay: -0.75s;
+  }
+  
+  &.pl__tick:nth-child(7) {
+    animation-delay: -0.5s;
+  }
+  
+  & .pl__tick:nth-child(8) {
+    animation-delay: -0.25s;
+  }
+}
+
+
+.mid {
+  background-color: #605d70;
+  border-radius: 1.8rem;
+  -webkit-border-radius: 1.8rem;
+  -moz-border-radius: 1.8rem;
+  -ms-border-radius: 1.8rem;
+  -o-border-radius: 1.8rem;
+}
+
+
+  /* Animations */
+  @keyframes arrows42 {
+    from {
+      transform: rotate(45deg);
+    }
+  
+    to {
+      transform: rotate(405deg);
+    }
+  }
+  
+  @keyframes ringRotate42 {
+    from {
+      transform: rotate(0);
+    }
+  
+    to {
+      transform: rotate(720deg);
+    }
+  }
+  
+  @keyframes ringStroke42 {
+    from,
+    to {
+      stroke-dashoffset: 452;
+      transform: rotate(-45deg);
+    }
+  
+    50% {
+      stroke-dashoffset: 169.5;
+      transform: rotate(-180deg);
+    }
+  }
+  
+  @keyframes tick42 {
+    from,
+    3%,
+    47%,
+    to {
+      stroke-dashoffset: -12;
+    }
+  
+    14%,
+    36% {
+      stroke-dashoffset: 0;
+    }
+  }
