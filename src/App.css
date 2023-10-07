@@ -427,7 +427,8 @@
     flex-wrap: wrap;
     margin: 12px;
     & .card {
-      width: 160px;
+      width: 90%;
+      margin: auto;
       border: 1px solid #55535f;
       border-radius: 8px;
       -webkit-border-radius: 8px;
