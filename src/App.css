@@ -39,6 +39,7 @@
   display: flex;
   align-items: center;
   height: 30%;
+  color: white;
   .data {
     width: 70%;
     padding: 0 30px;
@@ -63,6 +64,7 @@
     .figure {
       margin: auto;
       width: 70%;
+      image-rendering: pixelated;
     }
   }
 }
@@ -75,6 +77,31 @@
   -moz-border-radius: 1.8rem;
   -ms-border-radius: 1.8rem;
   -o-border-radius: 1.8rem;
+  & .hours {
+    display: flex;
+    justify-content: space-around;
+    gap: 6px;
+    & .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 200px;
+      text-align: center;
+      color: white;
+      & figure {
+        width: 90px;
+        margin: auto;
+      }
+      & span {
+        color: goldenrod;
+        font-size: 1.4rem;
+        font-weight: bold;
+      }
+    }
+  }
+  & span {
+    color: white;
+  }
 }
 .box-wind {
   display: flex;
@@ -92,9 +119,11 @@
   & .content {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
     gap: 12px;
     & .condition {
-      width: 260px;
+      width: 210px;
       text-align: center;
       & h2 {
         font-size: 2rem;
@@ -116,6 +145,7 @@
   flex-wrap: wrap;
   text-align: center;
   justify-content: center;
+  width: 180px;
   gap: 8px;
   & .data {
     display: flex;
@@ -203,11 +233,45 @@
 
 .mid {
   background-color: #605d70;
+  padding: 20px;
   border-radius: 1.8rem;
   -webkit-border-radius: 1.8rem;
   -moz-border-radius: 1.8rem;
   -ms-border-radius: 1.8rem;
   -o-border-radius: 1.8rem;
+  & .box-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+  }
+  & .card {
+    display: flex;
+    width: 100%;
+    background: #34314d;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 18px;
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
+    -ms-border-radius: 18px;
+    -o-border-radius: 18px;
+    & .data{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 70%;
+      & span {
+        font-size: 1.8rem;
+      }
+      & p {
+        color: goldenrod;
+      }
+    }
+    & figure {
+      width: 90px;
+    }
+  }
 }
 
 
@@ -258,3 +322,136 @@
       stroke-dashoffset: 0;
     }
   }
+
+
+  @media only screen and (max-width: 1080px) {
+
+      .box-wind {
+        & .content {
+          & .condition {
+            width: 140px;
+          }
+          & .box-brujula {
+            width: 160px;
+          }
+        }
+      }
+      .mid {
+        & .card {
+          & .data {
+            & span {
+              font-size: 1.6rem;
+            }
+          } 
+        }
+      }
+      .box-today {
+        & .hours {
+          & .card {
+            & figure {
+              width: 60px;
+            }
+          }
+        }
+      }
+  }
+
+  @media only screen and (max-width: 980px) {
+    .container {
+      flex-direction: column;
+      height: auto;
+    }
+    .big {
+      width: 100%;
+    }
+    .box-wind {
+      padding: 16px;
+      & .content {
+        & .condition {
+          & span {
+            font-size: 2rem;
+          }
+        }
+        & .box-brujula {
+          width: 160px;
+          & .data {
+            & span {
+              font-size: 4rem;
+            }
+          }
+        }
+      }
+    }
+    .mid {
+      width: 100%;
+      & .box-card {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: row;
+        gap: 16px;
+      }
+      & .card {
+        width: 300px;
+        & .data {
+          & span {
+            font-size: 1.6rem;
+          }
+        } 
+      }
+    }
+    .box-today {
+      & .hours {
+        & .card {
+          & figure {
+            width: 60px;
+          }
+        }
+      }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+ .box-weather {
+  & .data {
+    & h2 {
+      font-size: 2rem;
+    }
+    & span {
+      font-size: 6rem;
+    }
+  }
+ }
+ .box-today {
+  & .hours {
+    flex-wrap: wrap;
+    margin: 12px;
+    & .card {
+      width: 160px;
+      border: 1px solid #55535f;
+      border-radius: 8px;
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      -ms-border-radius: 8px;
+      -o-border-radius: 8px;
+    }
+  }
+ }
+ .box-wind {
+  & .content {
+    & .condition {
+      width: 100%;
+    }
+    & .wind {
+      display: flex;
+      width: 100%;
+      text-align: center;
+      justify-content: space-evenly;
+    }
+    &  .box-brujula {
+      width: 100%;
+     }
+  }
+ }
+
+}
