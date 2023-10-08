@@ -26,15 +26,15 @@
     width: 100%;
     height: 40px;
     font-size: 2rem;
+    color: white;
     outline: none;
     padding-left: 12px;
-    background: #605d70;
-    border: 1px solid #34314d;
-    border-radius: 12px;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    -ms-border-radius: 12px;
-    -o-border-radius: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
   }
 }
 .box-weather {
@@ -73,12 +73,12 @@
 .box-today {
   height: 30%;
   padding: 20px;
-  background: #605d70;
-  border-radius: 1.8rem;
-  -webkit-border-radius: 1.8rem;
-  -moz-border-radius: 1.8rem;
-  -ms-border-radius: 1.8rem;
-  -o-border-radius: 1.8rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   & .hours {
     display: flex;
     justify-content: space-around;
@@ -111,13 +111,13 @@
   justify-content: space-between;
   height: 30%;
   padding: 20px;
-  background: #605d70;
-  border-radius: 1.8rem;
   color: white;
-  -webkit-border-radius: 1.8rem;
-  -moz-border-radius: 1.8rem;
-  -ms-border-radius: 1.8rem;
-  -o-border-radius: 1.8rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   & .content {
     display: flex;
     flex-wrap: wrap;
@@ -236,11 +236,12 @@
 .mid {
   background-color: #605d70;
   padding: 20px;
-  border-radius: 1.8rem;
-  -webkit-border-radius: 1.8rem;
-  -moz-border-radius: 1.8rem;
-  -ms-border-radius: 1.8rem;
-  -o-border-radius: 1.8rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   & .box-card {
     display: flex;
     flex-direction: column;
@@ -250,14 +251,14 @@
   & .card {
     display: flex;
     width: 100%;
-    background: #34314d;
     color: white;
     padding: 8px 12px;
-    border-radius: 18px;
-    -webkit-border-radius: 18px;
-    -moz-border-radius: 18px;
-    -ms-border-radius: 18px;
-    -o-border-radius: 18px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     & .data{
       display: flex;
       flex-direction: column;
