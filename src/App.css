@@ -5,6 +5,8 @@
   width: 100vw;
   height: 100vh;
   background-color: #151b35;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 .big {
   display: flex;
@@ -360,6 +362,8 @@
     .container {
       flex-direction: column;
       height: auto;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
     .big {
       width: 100%;
@@ -412,6 +416,10 @@
 }
 
 @media only screen and (max-width: 480px) {
+  .container {
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
  .box-weather {
   & .data {
     & h2 {
