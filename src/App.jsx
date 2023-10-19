@@ -20,44 +20,44 @@ function App() {
 
   // #region data clima del dia
   const [timeA, setTimeA] = useState("00:00");
-  const [condiA, setCondiA] = useState("Soleado");
+  const [condiA, setCondiA] = useState("No hay datos");
   const [imgA, setImgA] = useState(defaultImg);
 
   const [timeB, setTimeB] = useState("00:00");
-  const [condiB, setCondiB] = useState("Soleado");
+  const [condiB, setCondiB] = useState("No hay datos");
   const [imgB, setImgB] = useState(defaultImg);
 
   const [timeC, setTimeC] = useState("00:00");
-  const [condiC, setCondiC] = useState("Soleado");
+  const [condiC, setCondiC] = useState("No hay datos");
   const [imgC, setImgC] = useState(defaultImg);
 
   const [timeD, setTimeD] = useState("00:00");
-  const [condiD, setCondiD] = useState("Soleado");
+  const [condiD, setCondiD] = useState("No hay datos");
   const [imgD, setImgD] = useState(defaultImg);
 
   const [timeE, setTimeE] = useState("00:00");
-  const [condiE, setCondiE] = useState("Soleado");
+  const [condiE, setCondiE] = useState("No hay datos");
   const [imgE, setImgE] = useState(defaultImg);
 
   // data clima week
   const [timeDayA, setTimeDayA] = useState("00:00");
-  const [condiDayA, setCondiDayA] = useState("Soleado");
+  const [condiDayA, setCondiDayA] = useState("No hay datos");
   const [imgDayA, setImgDayA] = useState(defaultImg);
 
   const [timeDayB, setTimeDayB] = useState("00:00");
-  const [condiDayB, setCondiDayB] = useState("Soleado");
+  const [condiDayB, setCondiDayB] = useState("No hay datos");
   const [imgDayB, setImgDayB] = useState(defaultImg);
 
   const [timeDayC, setTimeDayC] = useState("00:00");
-  const [condiDayC, setCondiDayC] = useState("Soleado");
+  const [condiDayC, setCondiDayC] = useState("No hay datos");
   const [imgDayC, setImgDayC] = useState(defaultImg);
 
   const [timeDayD, setTimeDayD] = useState("00:00");
-  const [condiDayD, setCondiDayD] = useState("Soleado");
+  const [condiDayD, setCondiDayD] = useState("No hay datos");
   const [imgDayD, setImgDayD] = useState(defaultImg);
 
   const [timeDayE, setTimeDayE] = useState("00:00");
-  const [condiDayE, setCondiDayE] = useState("Soleado");
+  const [condiDayE, setCondiDayE] = useState("No hay datos");
   const [imgDayE, setImgDayE] = useState(defaultImg);
   // #endregion
 
@@ -74,7 +74,7 @@ function App() {
   
         let resWeather = await fetch(endPointWeather);
         let data = await resWeather.json();
-  
+        
         const resCityImg = await fetch(endPointCityImg, {
           method: "GET",
           headers: {
@@ -83,8 +83,8 @@ function App() {
           },
         });
         const resDataImg = await resCityImg.json();
-  
-  
+        console.log(data)
+
         // #region asigna valores a variables
         let selectFlag = data.location.country.substring(0, 2).toUpperCase();
         setCity(data.location.name + "/" + data.location.region);
@@ -129,23 +129,23 @@ function App() {
         setTimeDayB(data.forecast.forecastday[2].date);
         setImgDayB(data.forecast.forecastday[2].day.condition.icon);
   
-        setCondiDayC(data.forecast.forecastday[3].day.condition.text);
-        setTimeDayC(data.forecast.forecastday[3].date);
-        setImgDayC(data.forecast.forecastday[3].day.condition.icon);
+        // setCondiDayC(data.forecast.forecastday[3].day.condition.text);
+        // setTimeDayC(data.forecast.forecastday[3].date);
+        // setImgDayC(data.forecast.forecastday[3].day.condition.icon);
   
-        setCondiDayD(data.forecast.forecastday[4].day.condition.text);
-        setTimeDayD(data.forecast.forecastday[4].date);
-        setImgDayD(data.forecast.forecastday[4].day.condition.icon);
+        // setCondiDayD(data.forecast.forecastday[4].day.condition.text);
+        // setTimeDayD(data.forecast.forecastday[4].date);
+        // setImgDayD(data.forecast.forecastday[4].day.condition.icon);
   
-        setCondiDayE(data.forecast.forecastday[5].day.condition.text);
-        setTimeDayE(data.forecast.forecastday[5].date);
-        setImgDayE(data.forecast.forecastday[5].day.condition.icon);
+        // setCondiDayE(data.forecast.forecastday[5].day.condition.text);
+        // setTimeDayE(data.forecast.forecastday[5].date);
+        // setImgDayE(data.forecast.forecastday[5].day.condition.icon);
         // #endregion cierra
-  
+        
         container.current.style.backgroundImage = `url(${resDataImg.photos[0].src.original})`;
       }
     } catch (error) {
-      console.log('no se encontraron imagenes')
+      console.error(error)
     }
 
   };
@@ -158,7 +158,7 @@ function App() {
             <input
               type="text"
               id="search"
-              placeholder="Ciudad/Pais"
+              placeholder="Bogotá/Roma/Jalisco... Enter para buscar!"
               onKeyDown={(e) => {
                 search(e);
               }}

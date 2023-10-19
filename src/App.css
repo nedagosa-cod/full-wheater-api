@@ -16,6 +16,10 @@
 }
 .mid {
   width: 30%;
+  & span {
+    color: black;
+    font-size: 1.4rem;
+  }
 }
 .box-search {
   display: flex;
@@ -94,8 +98,11 @@
         width: 90px;
         margin: auto;
       }
+      & p {
+        font-size: 12px;
+      }
       & span {
-        color: goldenrod;
+        color: black;
         font-size: 1.4rem;
         font-weight: bold;
       }
@@ -139,7 +146,7 @@
     width: 100%;
   }
   & h2 {
-    color: goldenrod;
+    color: black;
   }
 }
 .box-brujula {
@@ -268,7 +275,7 @@
         font-size: 1.8rem;
       }
       & p {
-        color: goldenrod;
+        color: black;
       }
     }
     & figure {
